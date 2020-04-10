@@ -7,8 +7,7 @@ class Song < ActiveRecord::Base
   end
 
   def drake_made_this
-    artist = 'drake'
-    artist.save
-    
+    drake = Artist.find_or_create_by(name: "Drake")
+    self.artist = drake
   end
 end
